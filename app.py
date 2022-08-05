@@ -39,7 +39,7 @@ import tensorflow.compat.v2 as tf
 
 import functools
 import gin
-import jax
+
 import librosa
 import note_seq
 
