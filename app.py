@@ -1,5 +1,5 @@
 import os
-os.system("pip install gradio==2.4.6")
+
 
 import gradio as gr
 from pathlib import Path
