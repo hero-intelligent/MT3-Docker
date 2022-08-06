@@ -33,7 +33,7 @@ os.system("gsutil -q -m cp gs://magentadata/soundfonts/SGM-v2.01-Sal-Guit-Bass-V
 
 import functools
 import os
-import jax
+
 import numpy as np
 import tensorflow.compat.v2 as tf
 
