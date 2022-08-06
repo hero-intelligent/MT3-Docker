@@ -14,7 +14,7 @@ scikit-learn
 scipy
 seqio
 t5
-tensorflow_cpu
+tensorflow
 tensorflow-datasets
 
 
