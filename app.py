@@ -6,7 +6,7 @@ from pathlib import Path
 os.system("pip install gsutil")
 
 
-os.system("git clone --branch=main https://github.com/inotiawu/t5x")
+os.system("git clone --branch=main https://github.com/google-research/t5x")
 os.system("mv t5x t5x_tmp; mv t5x_tmp/* .; rm -r t5x_tmp")
 
 os.system("python3 -m pip install -e .")
