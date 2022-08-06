@@ -8,7 +8,7 @@ os.system("pip install gsutil")
 
 os.system("git clone --branch=main https://github.com/inotiawu/t5x")
 os.system("mv t5x t5x_tmp; mv t5x_tmp/* .; rm -r t5x_tmp")
-
+os.system("sed -i 's:jax\[tpu\]:jax:' setup.py")
 os.system("python3 -m pip install -e .")
 os.system("python3 -m pip install --upgrade pip")
 
@@ -33,7 +33,7 @@ os.system("gsutil -q -m cp gs://magentadata/soundfonts/SGM-v2.01-Sal-Guit-Bass-V
 
 import functools
 import os
-
+import jax
 import numpy as np
 import tensorflow.compat.v2 as tf
 
