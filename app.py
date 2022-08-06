@@ -8,7 +8,7 @@ os.system("pip install gsutil")
 
 os.system("git clone --branch=main https://github.com/inotiawu/t5x")
 os.system("mv t5x t5x_tmp; mv t5x_tmp/* .; rm -r t5x_tmp")
-os.system("python3 -mpip install 'jax[tpu]>=0.2.16' -f https://storage.googleapis.com/jax-releases/libtpu_releases.html")
+
 os.system("python3 -m pip install -e .")
 os.system("python3 -m pip install --upgrade pip")
 
