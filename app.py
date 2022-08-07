@@ -6,16 +6,16 @@ from pathlib import Path
 os.system("pip install gsutil")
 
 
-os.system("git clone --branch=main https://github.com/google-research/t5x")
+os.system("git clone --branch=main https://github.com/inotiawu/t5x")
 os.system("mv t5x t5x_tmp; mv t5x_tmp/* .; rm -r t5x_tmp")
-
+os.system("sed -i 's:jax\[tpu\]:jax:' setup.py")
 os.system("python3 -m pip install -e .")
 os.system("python3 -m pip install --upgrade pip")
 
 
 
 # install mt3
-os.system("git clone --branch=main https://github.com/magenta/mt3")
+os.system("git clone --branch=main https://github.com/inotiawu/mt3")
 os.system("mv mt3 mt3_tmp; mv mt3_tmp/* .; rm -r mt3_tmp")
 os.system("python3 -m pip install -e .")
 
