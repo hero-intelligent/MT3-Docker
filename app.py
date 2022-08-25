@@ -27,7 +27,7 @@ os.system("gsutil -q -m cp gs://magentadata/soundfonts/SGM-v2.01-Sal-Guit-Bass-V
 
 #@title Imports and Definitions
 
-
+os.system("pip install tensorflow_cpu")
 
 
 
@@ -35,7 +35,7 @@ import functools
 import os
 
 import numpy as np
-import tensorflow_cpu
+
 import tensorflow.compat.v2 as tf
 
 import functools
