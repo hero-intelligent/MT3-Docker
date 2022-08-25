@@ -1,5 +1,5 @@
 import os
-
+os.system("pip install gradio==2.4.6")
 
 import gradio as gr
 from pathlib import Path
@@ -15,7 +15,7 @@ os.system("python3 -m pip install --upgrade pip")
 
 
 # install mt3
-os.system("git clone --branch=main https://github.com/magenta/mt3")
+os.system("git clone --branch=main https://github.com/inotiawu/mt3")
 os.system("mv mt3 mt3_tmp; mv mt3_tmp/* .; rm -r mt3_tmp")
 os.system("python3 -m pip install -e .")
 
