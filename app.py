@@ -6,7 +6,7 @@ from pathlib import Path
 os.system("pip install gsutil")
 
 
-os.system("git clone --branch=main https://github.com/inotiawu/t5x")
+os.system("git clone --branch=main https://github.com/google-research/t5x")
 os.system("mv t5x t5x_tmp; mv t5x_tmp/* .; rm -r t5x_tmp")
 os.system("sed -i 's:jax\[tpu\]:jax:' setup.py")
 os.system("python3 -m pip install -e .")
@@ -18,7 +18,7 @@ os.system("python3 -m pip install --upgrade pip")
 os.system("git clone --branch=main https://github.com/inotiawu/mt3")
 os.system("mv mt3 mt3_tmp; mv mt3_tmp/* .; rm -r mt3_tmp")
 os.system("python3 -m pip install -e .")
-
+os.system("pip install tensorflow_cpu")
 # copy checkpoints
 os.system("gsutil -q -m cp -r gs://mt3/checkpoints .")
 
@@ -27,7 +27,7 @@ os.system("gsutil -q -m cp gs://magentadata/soundfonts/SGM-v2.01-Sal-Guit-Bass-V
 
 #@title Imports and Definitions
 
-os.system("pip install tensorflow_cpu")
+
 
 
 
