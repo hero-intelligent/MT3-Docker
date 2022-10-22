@@ -97,7 +97,7 @@ class InferenceModel(object):
                             'targets': self.outputs_length}
 
     self.partitioner = t5x.partitioning.PjitPartitioner(
-        model_parallel_submesh=(1, 1, 1, 1), num_partitions=1)
+        model_parallel_submesh=none, num_partitions=1)
 
     # Build Codecs and Vocabularies.
     self.spectrogram_config = spectrograms.SpectrogramConfig()
