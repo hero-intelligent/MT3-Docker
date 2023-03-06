@@ -40,7 +40,7 @@ demo = gr.Interface(
       gr.inputs.Audio(type="filepath", label="Input"), 
       gr.Dropdown(choices=["mt3", "ismir2021", "ismir2022_base", "ismir2022_small"])
     ],
-    [gr.outputs.File(label="Output")],
+    outputs=[gr.outputs.File(label="Output")],
     title=title,
     description=description,
     article=article,
