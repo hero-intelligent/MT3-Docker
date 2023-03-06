@@ -10,7 +10,7 @@ Another Dockerfile which may be awsome: https://github.com/jsphweid/mt3-docker
 
 ## Preparation
 
-To run this docker container, Ubuntu 20.04 baremetal is recomended.
+To run this docker container, **Ubuntu 20.04** *baremetal localhost* is recomended. You can certainly choose to run whether baremetal or on a virtual machine, whether localhost or remotely under the same LAN, or even on a remote cloud computer, but there might be some issues. the installation will be exact the same.
 
 If you have not installed docker, please run
 ```Shell
@@ -34,14 +34,17 @@ Then run
 sudo docker run -d --gpus=all --name=mt3 -p 7860:7860 mt3 
 ```
 
-If you have no GPU or want to run on Windows docker, then run
+If you have **CPU only** or want to run on Windows docker, then run
 ```shell
-sudo docker run -d --gpus=all --name=mt3 -p 7860:7860 mt3 
+sudo docker run -d --name=mt3 -p 7860:7860 mt3 
 ```
+
+Finally, visit `localhost:7860` and enjoy! If you run it remotely, please change `localhost` to the remote ip instead.
 
 # Cooperate with UVR5
 
-The quality of transcription will be better if a pure instrumental piece is inputed. If you want to transcribe a song with vocal, it is highly recomended to remove the vocal part using the UVR5.
-UVR5, or Ultimate Vocal Remover GUI v5.5.0, is an AI powered and self-contained vocal remover, which is supported on both Windows and GUI Linux.
+The quality of transcription will be better if a pure instrumental piece is inputed. If you want to transcribe a song with vocal, it is highly recomended to remove the vocal part using the **UVR5**.
+
+**UVR5**, or *Ultimate Vocal Remover GUI v5.5.0*, is an AI powered and self-contained vocal remover, which is supported on both Windows and GUI Linux.
 
 Check out more details at the [Official Website](https://ultimatevocalremover.com/) and [Github Repo](https://github.com/Anjok07/ultimatevocalremovergui) and follow the instructions to have the software installed.
