@@ -5,13 +5,19 @@ from imports_and_definitions import InferenceModel
 from imports_and_definitions import upload_audio
 import note_seq
 
-inference_model = InferenceModel('/home/user/app/checkpoints/mt3/', 'mt3')
+# inference_model = InferenceModel('/home/user/app/checkpoints/mt3/', 'mt3')
+def select(model):
+  if model == "mt3":
+      inference_model = InferenceModel('/home/user/app/checkpoints/mt3/', 'mt3')
+  if model == "ismir2021":
+      inference_model = InferenceModel('/home/user/app/checkpoints/ismir2021/', 'ismir2021')
+  return inference_model
 
-def inference(audio):
+def inference(audio,model):
   with open(audio, 'rb') as fd:
       contents = fd.read()
   audio = upload_audio(contents,sample_rate=16000)
-  est_ns = inference_model(audio)
+  est_ns = select(model)(audio)
   note_seq.sequence_proto_to_midi_file(est_ns, './transcribed.mid')
   return './transcribed.mid'
   
@@ -35,8 +41,11 @@ article = """
 """
 
 demo = gr.Interface(
-    inference, 
-    gr.inputs.Audio(type="filepath", label="Input"), 
+    fn=inference, 
+    inputs=[
+      gr.inputs.Audio(type="filepath", label="Input"), 
+      gr.Dropdown(choices=["mt3", "ismir2021"])
+    ],
     [gr.outputs.File(label="Output")],
     title=title,
     description=description,
