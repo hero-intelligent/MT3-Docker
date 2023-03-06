@@ -3,7 +3,9 @@
 Gradio demo for MT3: Multi-Task Multitrack Music Transcription. To use it, simply upload your audio file, or click one of the examples to load them. Read more at the links below.
 
 Pulled and adjusted from: [This Huggingface Repository](https://huggingface.co/spaces/oniati/mrt)
+
 Source codes: [MT3: Multi-Task Multitrack Music Transcription](https://arxiv.org/abs/2111.03017) | [Github Repo](https://github.com/magenta/mt3)
+
 Another Dockerfile which may be awsome: https://github.com/jsphweid/mt3-docker
 
 ## Preparation
