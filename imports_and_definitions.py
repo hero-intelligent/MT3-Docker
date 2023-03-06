@@ -56,7 +56,11 @@ class InferenceModel(object):
       raise ValueError('unknown model_type: %s' % model_type)
 
     gin_files = ['/home/user/app/mt3/gin/model.gin',
-                 '/home/user/app/mt3/gin/mt3.gin']
+                 '/home/user/app/mt3/gin/ismir2021.gin',
+                 '/home/user/app/mt3/gin/mt3.gin',
+                 '/home/user/app/mt3/gin/ismir2022/base.gin',
+                 '/home/user/app/mt3/gin/ismir2022/small.gin'
+                ]
 
     self.batch_size = 8
     self.outputs_length = 1024
