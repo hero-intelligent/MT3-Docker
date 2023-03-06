@@ -29,6 +29,8 @@ RUN gsutil -q -m cp -r gs://mt3/checkpoints .
 # copy soundfont (originally from https://sites.google.com/site/soundfonts4u)
 RUN gsutil -q -m cp gs://magentadata/soundfonts/SGM-v2.01-Sal-Guit-Bass-V1.3.sf2 .
 
+RUN mkdir -p /home/user && ln -s /app /home/user/app
+
 EXPOSE 7860
 
 CMD [ "python", "app.py" ]
