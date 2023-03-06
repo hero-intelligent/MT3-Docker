@@ -1,7 +1,8 @@
 import gradio as gr
 from pathlib import Path
 
-from imports_and_definitions import InferenceModel, upload_audio
+from imports_and_definitions import InferenceModel
+from imports_and_definitions import upload_audio
 import note_seq
 
 inference_model = InferenceModel('/home/user/app/checkpoints/mt3/', 'mt3')
