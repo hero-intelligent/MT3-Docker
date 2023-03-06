@@ -52,12 +52,20 @@ class InferenceModel(object):
       num_velocity_bins = 1
       self.encoding_spec = note_sequences.NoteEncodingWithTiesSpec
       self.inputs_length = 256
+    if model_type == 'ismir2022_base':
+      num_velocity_bins = 127
+      self.encoding_spec = note_sequences.NoteEncodingSpec
+      self.inputs_length = 512
+    if model_type == 'ismir2022_small':
+      num_velocity_bins = 127
+      self.encoding_spec = note_sequences.NoteEncodingSpec
+      self.inputs_length = 512
     else:
       raise ValueError('unknown model_type: %s' % model_type)
 
     gin_files = ['/home/user/app/mt3/gin/model.gin',
-                 '/home/user/app/mt3/gin/ismir2021.gin',
                  '/home/user/app/mt3/gin/mt3.gin',
+                 '/home/user/app/mt3/gin/ismir2021.gin',
                  '/home/user/app/mt3/gin/ismir2022/base.gin',
                  '/home/user/app/mt3/gin/ismir2022/small.gin'
                 ]
