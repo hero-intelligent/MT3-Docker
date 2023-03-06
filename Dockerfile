@@ -4,10 +4,10 @@ FROM tensorflow/tensorflow:latest-gpu
 # preinstall necessary packages and dependencies
 RUN apt update
 RUN apt install -y git wget curl
-RUN apt install -y libfluidsynth1 build-essential libasound2-dev libjack-dev
+RUN apt install -y libfluidsynth2 build-essential libasound2-dev libjack-dev
 RUN git clone https://github.com/hero-intelligent/MT3-Docker.git app
 WORKDIR /app
-RUN pip install -r requirements
+RUN pip install -r requirements.txt
 
 # prepare environments
 RUN pip install gradio gsutil
