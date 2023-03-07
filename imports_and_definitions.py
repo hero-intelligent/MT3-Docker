@@ -44,31 +44,24 @@ class InferenceModel(object):
   def __init__(self, checkpoint_path, model_type='mt3'):
 
     # Model Constants.
-    if model_type == 'ismir2021':
-      num_velocity_bins = 127
-      self.encoding_spec = note_sequences.NoteEncodingSpec
-      self.inputs_length = 512
-    elif model_type == 'mt3':
+    
+    # two and only two elements needed in list gin_files.
+    gin_files = ['/home/user/app/mt3/gin/model.gin'] 
+    
+    # append another element here in if block.
+    if model_type == 'mt3':
       num_velocity_bins = 1
       self.encoding_spec = note_sequences.NoteEncodingWithTiesSpec
       self.inputs_length = 256
-    if model_type == 'ismir2022_base':
+      gin_files.append('/home/user/app/mt3/gin/mt3.gin')
+    elif model_type == 'ismir2021':
       num_velocity_bins = 127
       self.encoding_spec = note_sequences.NoteEncodingSpec
       self.inputs_length = 512
-    if model_type == 'ismir2022_small':
-      num_velocity_bins = 127
-      self.encoding_spec = note_sequences.NoteEncodingSpec
-      self.inputs_length = 512
+      gin_files.append('/home/user/app/mt3/gin/ismir2021.gin')
     else:
       raise ValueError('unknown model_type: %s' % model_type)
-
-    gin_files = ['/home/user/app/mt3/gin/model.gin',
-                 '/home/user/app/mt3/gin/mt3.gin',
-                 '/home/user/app/mt3/gin/ismir2021.gin',
-                 '/home/user/app/mt3/gin/ismir2022/base.gin',
-                 '/home/user/app/mt3/gin/ismir2022/small.gin'
-                ]
+      gin_files.append('/home/user/app/mt3/gin/mt3.gin')
 
     self.batch_size = 8
     self.outputs_length = 1024
